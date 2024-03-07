@@ -1,0 +1,1 @@
+<footercl class="fixed-bottom bg-dark text-light text-center p-3">그린 저작권</footercl>

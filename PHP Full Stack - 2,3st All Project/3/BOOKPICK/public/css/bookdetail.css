@@ -1,0 +1,841 @@
+/* 책 상세 페이지 */
+.book_detail_layout {
+    padding: 20px 20px 0;
+}
+.book_detail_layout1 {
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+    padding: 0 20px;
+}
+.book_detail_div1{
+	width: 200px;
+	height: 300px;
+}
+.book_detail_div2 p {
+	display: inline-block;
+}
+.book_detail_img {
+	width: 100%;
+	height: 100%;
+}
+.book_datail_title_txt {
+	font-size: 18px;
+	font-weight: bold;
+}
+.book_datail_cate_txt{
+	font-size: 11px;
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.5);
+}
+.book_datail_author_txt {
+	font-size: 13px;
+	color: #000;
+}
+.book_datail_price_txt {
+	font-size: 16px;
+	color: #000;
+}
+.book_datail_product_link {
+	margin-left: 3px;
+	font-size: 13px;
+	color: #4dac27;
+}
+.book_datail_product_link:hover {
+	text-decoration: underline;
+}
+
+/* 버튼부분 */
+.book_detail_zzim {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 36px;
+    color: #000;
+    background-color: #D9D9D9;
+    font-weight: bold;
+    font-size: 1rem;
+    /* transition: all .25s cubic-bezier(0, 0, 0, 0); */
+    filter: grayscale(100%);
+    user-select: none;
+    cursor: pointer;
+	margin-right: 5px;
+	position: relative;
+}
+
+.book_detail_zzim, .book_detail_zzim1 {
+	text-align: center;
+}
+.book_detail_zzim1 {
+    width: 100px;
+    height: 40px;
+    border: 0 none;
+    border-radius: 36px;
+    color: #fff;
+    background-color: #4DAC27;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    &:hover {
+        transition: all 150ms linear;
+        opacity: .85;
+    }
+    &:active {
+        transition: all 150ms linear;
+        opacity: .75;
+    }
+    &:focus {
+        outline: 1px dotted #959595;
+        outline-offset: -4px;
+    }
+}
+/* .book_detail_zzim {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+} */
+/* .book_detail_zzim */
+/* .book_detail_zzim1 {
+	width: 120px;
+	height: 30px;
+	text-align: center;
+	text-decoration: none;
+	color:#fff;
+	border-radius: 5px;
+	cursor:pointer;
+	font-size: 14px;
+	font-weight: bold;
+} */
+.heart-icon {
+	display: inline;
+	fill: currentColor;
+	width: 1.2em;
+	height: 1.2em;
+	position: absolute;
+	top:10px;
+	left: 15px;
+}
+/* .heart-icon.nolike {
+	opacity: 0.5;
+} */
+.book_detail_zzim_txt {
+	margin-left: 20px;
+}
+.book_detail_zzim.liked {
+    color: #FF6E6F;
+    border: 0 none;
+    border-radius: 36px;
+    background-color: #D9D9D9;
+    filter: grayscale(0);
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width: 849.99px) {
+	.book_detail_div1, .book_detail_div2 {
+		padding: 10px;
+		float: none;
+		display: block;
+	}
+	.book_detail_div2{
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 850px) {
+	.book_detail_div1, .book_detail_div2 {
+		padding: 10px;
+		float: left;
+	}
+	.book_detail_div2{
+		width: 70%;
+		height: 300px;
+	}
+	.book_detail_layout1 {
+		height: 380px;
+	}
+}
+
+/* 모달부분 */
+.modal {
+    display: none;
+}
+.modal-content {
+	margin: 10px 0;
+	padding: 7px;
+	border: 1px solid #ccc;
+    border-radius: 5px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+	background-color: #fff;
+}
+#detailStartDate, #detailEndDate{
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	text-align: center;
+}
+#detailStartDate:focus, #detailEndDate:focus {
+	outline: none;
+}
+.modal-content_txt {
+	font-size: 14px;
+}
+.modal-content-submit {
+	width: 45px;
+	height: 25px;
+	text-align: center;
+	text-decoration: none;
+	color:#fff;
+	border-radius: 5px;
+	cursor:pointer;
+	font-size: 13px;
+	font-weight: bold;
+	border:1px solid #408e21;
+	background-color: #4dac27;
+}
+.book_datail_form1, .book_datail_form2 {
+	display: inline;
+}
+.book_datail_form1 {
+	margin-right: 10px;
+}
+.modal-content-submit {
+	float: right;
+}
+@media screen and (max-width: 549.99px) {
+	/* .modal-content {
+		width: 100%;
+	} */
+	.modal-content {
+		width: 280px;
+		height: 100px;
+	}
+	#detailEndDate {
+		margin-bottom: 10px;
+	}
+}
+@media screen and (min-width: 550px) {
+	.modal-content {
+		width: 330px;
+		height: 90px;
+	}
+	.modal-content-submit {
+		margin-top:20px;
+	}
+}
+#detailEndDate {
+	margin-top: 11px;
+}
+
+
+.book_detail_div1 {
+	margin-top: 20px;
+}
+
+
+
+
+
+
+
+/* 호철 연관 도서 추천 영역 */
+.book_detail_box1 {
+	width: 100%;
+	/* height: 30vh; */
+	position: relative;
+	padding: 20px 20px;
+}
+.book_detail_title {
+	height: 10px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.book_detail_title strong {
+	font-size: 20px;
+	font-weight: 700;
+	margin: 0px 0px 0px 10px;
+}
+.book_detail_title p {
+	display: inline-block;
+	font-size: 0.7rem;
+	color: #9d9d9d;
+	margin-left: 10px;
+}
+.book_detail_slide_container {
+	background-color: white;
+	transition: all 1s;
+	white-space:nowrap;
+	overflow: scroll;
+	width: 100%;
+	margin-top: 20px;
+	border: 1px solid #ccc;
+    border-radius: 10px;
+	padding-left: 10px;
+}
+.book_detail_slide_container::-webkit-scrollbar {
+	display: none;
+} 
+
+.book_detail_slide-box {
+	display: inline-block;
+	width: 170px;
+	margin-left: 30px;
+	margin-bottom: 20px;
+}
+.book_detail_slide-box img {
+	width: 150px;
+    height: 200px;
+    padding: 20px 0px;
+}
+.book_detail_slide-box p {
+	width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0 auto;
+}
+
+
+
+
+
+/* 호철 댓글부분 css 만듬 */
+.book_detail_comment_layout {
+	padding: 20px 20px;
+    margin-bottom: 30px;
+}
+.book_detail_comment_section-box {
+	width: 100%;
+	border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+}
+.book_detail_comment_section-1 {
+	display: flex;
+    justify-content: space-between;
+    width: 100%;
+	padding: 20px 20px 0px;
+}
+.book_detail_comment_section-1 strong {
+	font-size: 20px;
+}
+.book_detail_comment_grid {
+	width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-auto-rows: minmax(200px, auto);
+    padding: 20px 20px;
+	gap: 10px;
+}
+.book_detail_comment_grid-item {
+	width: 100%;
+	padding: 10px;
+    background-color: #E9F2DF;
+	color: #000;
+	border-radius: 0 0 10px 10px;
+}
+
+
+
+
+/*  모달  */
+.book_detail_comment_modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 999;
+}
+
+.book_detail_comment_modal.show {
+	display: block;
+}
+
+.book_detail_comment_modal_body {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	width: 450px;
+	height: 450px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 1.2rem;
+	text-align: center;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.book_detail_comment_modal_form{
+	padding: 5px 20px;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.book_detail_comment_modal_content {
+	margin-bottom: 10px;
+}
+
+.book_detail_comment_modal_footer{
+	display: flex;
+    justify-content: space-around;
+    margin: 5px 10px;
+	padding: 0px 20px;
+}
+
+.book_detail_comment_modal_content_textarea {
+	resize: none;
+	outline: none;
+	height: 350px;
+    width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.book_detail_comment_modal_content_textarea:focus {
+	border: 1px solid #4dac27;
+	border-radius: 5px;
+}
+
+.book_detail_comment_close_modal_btn {	
+	background-color: #D9D9D9;
+	color: #000;
+}
+
+.book_detail_comment_complete_modal_btn {
+	background-color: #4dac27;
+	color: #fff;
+}
+
+.book_detail_comment_complete_modal_btn,
+.book_detail_comment_close_modal_btn {
+	width: 100px;
+    height: 40px;
+    border: 0 none;
+    border-radius: 36px;
+	font-weight: bold;
+    font-size: 1rem;
+	cursor: pointer;	
+    &:hover {
+        transition: all 150ms linear;
+    
+        opacity: .85;
+    }
+    &:active {
+        transition: all 150ms linear;
+        opacity: .75;
+    }
+    
+    &:focus {
+        outline: 1px dotted #959595;
+        outline-offset: -4px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+	.book_detail_comment_modal_body {
+		width: 20rem;
+	}
+
+	/* .book_detail_comment_modal_header textarea {
+		resize: none;
+		height: 30px;
+		width: 100%;
+	} */
+	
+	.book_detail_comment_modal_content textarea {
+		resize: none;
+		height: 350px;
+		width: 100%;
+	}
+
+	.book_detail_comment_modal_form{
+		padding: 5px 20px;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+	}
+}
+
+
+/* 상세 댓글 영역 */
+
+/* 레이아웃 */
+.bdc-layout {
+	width: 100%;
+    padding: 0px 200px;
+}
+
+@media only screen and (max-width: 1320px) {
+    .bdc-layout {
+		padding: 0px 20px;
+	}
+}
+
+.bdc-box {
+	width: 100%;
+	/* border: 1px solid #ccc; */
+	/* border-radius: 20px; */
+}
+
+/* 헤드 영역 */
+.bdc-head {
+	width: 100%;
+	border-radius: 10px;
+	margin-top: 30px;
+}
+
+.bdc-head-txt {
+	font-size: 19px;
+}
+
+.bdc-head-txt-count {
+	font-weight: bold;
+	font-size: 19px;
+	letter-spacing: 1px;
+}
+
+.categoryBtnDiv {
+	margin: 5px 0;
+	border-bottom: 1px solid #ccc;
+}
+.bdc-list-cate {
+	display: inline-block;
+	cursor: pointer;
+	font-size: 13px;
+	color:#929292;
+	padding-right: 11px;
+	padding-bottom: 5px;
+}
+
+.bdc-list-cate-bold {
+	font-weight: bold;
+	color:black;
+}
+
+.bdc-list-delete {
+	display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 13px;
+    top: 5px;
+	cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.bdc-list-delete:hover{
+    transform: scale(1.2);
+}
+/* 작성 영역 */
+.bdc-write {
+	border: 1px solid #b0b3be;
+	border-radius: 10px;
+}
+
+.bdc-reply-write {
+	padding: 10px 20px 5px 20px;
+	background-color: rgba(204, 204, 204, 0.146);
+}
+
+.bdc-profile-area {
+	position: relative;
+	height: 40px;
+	margin-bottom: 3px;
+
+}
+.bdc-profile-img, .bdc-profile-name, .bdc-profile-noname {
+	position: absolute;
+}
+
+.bdc-profile-img {
+	top: 13px;
+	left: 13px;
+	width: 25px;
+	height: 25px;
+}
+
+.bdc-profile-name {
+	margin: 5px 0 0 5px;
+	font-weight: bold;
+	font-size: 16px;
+	top: 12px;
+	left: 38px;
+}
+.bdc-profile-noname {
+	margin: 5px 0 0 5px;
+	font-size: 16px;
+	top: 12px;
+	left: 38px;
+	color:#999;
+}
+.bdc-write-box {
+	width: 100%;
+	height: 180px;
+	position: relative;
+}
+.bdc-reply-write-box {
+	width: 100%;
+	height: 120px;
+	position: relative;
+}
+.bdc-write-inbox-area {
+	height: 100%;
+	padding: 10px;
+}
+.bdc-write-area,.bdc-reply-write-area, .bdc-write-label {
+	position:absolute;
+	font-size: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .bdc-write-label, .bdc-reply-write-area, .bdc-write-area {
+		font-size: 13px;
+	}
+}
+
+.bdc-write-area {
+	width: calc(100% - 20px);
+	height: 160px;
+	padding: 5px;
+	resize: none;
+	border: none;
+	background-color: transparent;
+	overflow-y: auto;
+	cursor: pointer;
+}
+
+.bdc-reply-write-area {
+	width: calc(100% - 20px);
+	height: 100px;
+	padding: 5px;
+	resize: none;
+	border: none;
+	background-color: transparent;
+	overflow-y: auto;
+}
+
+.bdc-write-label {
+	left:7px;
+	top:6px;
+	height: 100%;
+	color:#999;
+	padding: 10px;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* 인터넷익스플로러 */
+    user-select: none;
+	cursor: text;
+}
+
+.bdc-write-label-span{
+	color: #4878f4;
+}
+
+.bdc-write-upload {
+	border-top: 1px solid #f0f0f0;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.bdc-write-upload-cnt{
+	padding: 10px;
+	font-size: 13px;
+}
+
+.bdc-write-upload-btn {
+	background-color: #4DAC27;
+	color: #fff;
+	width: 43px;
+	height: 30px;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
+	text-align: center;
+	margin-right: 10px;
+	font-size: 14px;
+}
+
+/* 리스트 영역 */
+.bdc-list-area {
+	border-bottom: 1px solid #ccc;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#bdc-list-area-no-text {
+	text-align: center;
+}
+
+.bdc-list-area-no-img {
+	width: 100px;
+	height: 100px;
+	margin: 20px 0;
+}
+
+.bdc-list-reply-area {
+	border-bottom: 1px solid #ccc;
+	background-color: rgba(204, 204, 204, 0.146);
+	padding: 10px 0 10px 15px;
+}
+
+.bdc-list-reply-area.display-none, .bdc-reply-write.display-none, .bdc-reply-fold-box.display-none {
+	display: none;
+}
+
+/* 리스트 상단 영역 */
+.bdc-list-top-area {
+	position: relative;
+	width: 100%;
+	height: 50px;
+}
+.bdc-list-area-img, .bdc-list-area-name, .bdc-list-area-at {
+	position: absolute;
+}
+.bdc-list-area-img {
+	left: 5px;
+	top:5px;
+	width: 35px;
+	height: 35px;
+}
+
+.bdc-list-area-name {
+	font-size: 15px;
+	left: 50px;
+	top:5px;
+	letter-spacing: 2px;
+}
+@media only screen and (max-width: 600px) {
+    .bdc-list-area-name {
+		font-size: 12px;
+	}
+}
+.bdc-list-area-at{
+	left: 50px;
+	top: 25px;
+	color:#999;
+	font-size: 13px;
+}
+
+/* 리스트 중단 영역 */
+.bdc-list-middle-area {
+	padding-right: 10px;
+	padding-bottom: 15px;
+}
+.bdc-list-area-content {
+	font-size: 15px;
+	margin-right: 0px;
+    letter-spacing: -.3px;
+	word-wrap: break-word;
+	padding: 3px 5px 7px 5px;
+}
+@media only screen and (max-width: 768px) {
+	.bdc-list-area-content {
+		padding: 3px 5px 7px 5px;
+	}
+}
+
+/* 리스트 하단 영역 */
+.bdc-list-bottom-area {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 10px;
+}
+.bdc-list-reply-bottom-area {
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	padding-right: 10px;
+}
+.bdc-list-area-reply {
+	color: #555;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.bdc-list-area-reply-cnt {
+	color: #000;
+	margin-left: 2px;
+	font-weight: bold;
+}
+
+.bdc-list-recommend-area, .bdc-list-area-like-box, .bdc-list-area-dislike-box {
+	display: inline-block;
+}
+.bdc-list-recommend-area {
+	font-size: 18px;
+	position: relative;
+	width: 100px;
+}
+.bdc-list-area-like-box{
+	margin-right: 25px;
+	color: #777;
+	cursor: pointer;
+	position: absolute;
+	top: -20px;
+	left: -10px;
+	opacity: 0.6;
+}
+.bdc-list-area-dislike-box{
+	margin-right: 10px;
+	color: #777;
+	cursor: pointer;
+	position: absolute;
+	top: -20px;
+	left: 50px;
+	opacity: 0.6;
+}
+
+.book_detail_likein_user {
+	filter: invert(53%) sepia(90%) saturate(432%) hue-rotate(58deg) brightness(90%) contrast(82%);
+	color: #000;
+	opacity: 1;
+}
+
+.bdc-dis-like-btn {
+	width: 20px;
+	height: 20px;
+	margin-right: 3px;
+	transition: transform 0.3s;
+}
+
+.bdc-dis-like-btn:hover {
+    transform: scale(1.1);
+}
+
+#book_detail_comment_modal_btn {
+	text-align: center;
+    width: 100px;
+    height: 40px;
+    border: 0 none;
+    border-radius: 36px;
+    color: #fff;
+    background-color: #4DAC27;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#book_detail_comment_modal_btn:hover {
+    transition: all 150ms linear;
+    opacity: .85;
+}
+
+.bdc-reply-fold-box{
+	padding: 10px 20px 5px 20px;
+	border-bottom: 1px solid #ccc;
+	background-color: rgba(204, 204, 204, 0.146);
+}
+.bdc-reply-fold-item {
+	font-size: 13px;
+	height: 30px;
+	border: none;
+	background: none;
+	text-align: center;
+	width: 100%;
+	cursor: pointer;
+}

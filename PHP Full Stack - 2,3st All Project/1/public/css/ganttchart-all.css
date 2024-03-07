@@ -1,0 +1,718 @@
+::-webkit-scrollbar {
+	height: 10px;
+	border-radius: 10px;
+	/* background: rgba(151, 87, 255, 0.5); */
+}
+
+.grid_div {
+	background-color: rgba(0, 0, 0, 0.514);
+    border-radius: 0 10px 10px 10px;
+    width: 100%;
+    height: 741px;
+}
+
+.task-add-btn {
+	width: 11px;
+	height: auto;
+	margin-bottom: 2px;
+}
+
+.gantt-add-btn:hover {
+	background-color: #000;
+}
+
+.gantt-align-div {
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: transparent;
+	border-radius: 11px;
+	width: 80px;
+	text-align: center;
+	border: 1px solid white;
+	margin-left: 5px;
+}
+.gantt-align {
+	width: 20px;
+	height: auto;
+}
+
+
+
+/* 간트차트 전체 */
+.gantt-content-wrap {
+	background-color: var(--theme-bg-color);
+	height: 670px;
+	overflow: hidden;
+	border-radius: 0 0 10px 10px;
+	display: flex;
+    flex-direction: column;
+}
+
+.resizer {
+	background-color: #0000004d;
+	cursor: ew-resize;
+	height: 100%;
+	width: 4px;
+	box-shadow: 2px 0px 4px 1px #000000ab;
+	transition: background-color 0.3s ease;
+}
+.resizer:hover {
+	background-color: #21D9AD;
+	transition: background-color 0.3s ease;
+}
+.resizer:active {
+	background-color: #21D9AD;
+	transition: background-color 0.3s ease;
+}
+
+/* 검색, 드롭박스, 업무추가버튼 영역 */
+.gantt-btn-wrap {
+    padding: 20px;
+    display: flex;
+	flex-direction: row;
+    flex-wrap: nowrap;
+	align-items: center;
+}
+
+.gantt-search {
+	border: 1px solid #ffffff;
+	border-radius: 25px;
+	color: white;
+	width: 150px;
+	height: 30px;
+	padding-left: 10px;
+	margin-right: 17px;
+	background-color: transparent;
+
+}
+
+.filter-div {
+	display: flex;
+	width: 550px;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.gantt-filter {
+    width: 17px;
+	height: auto;
+	margin-bottom: 2px;
+}
+
+.gantt-dropdown-check-list {
+	/* display: inline-block; */
+	position: relative;
+}
+
+.gantt-dropdown-check-list .gantt-span {
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: transparent;
+	border-radius: 11px;
+	width: 80px;
+	text-align: center;
+}
+
+.gantt-dropdown-check-list .gantt-span:hover {
+	background-color: #000;
+}
+.gantt-span-focus {
+	background-color: #000;
+	border-top: 1px solid white;
+	border-right: 1px solid white;
+	border-left: 1px solid white;
+
+	border-radius: 11px 11px 0 0;
+}
+
+/* .gantt-dropdown-check-list .gantt-span > span {
+	display: inline-block;
+    padding: 2px 0px;
+} */
+
+
+
+/* .gantt-dropdown-check-list .gantt-span:after {
+	position: absolute;
+	content: "";
+	border-left: 2px solid black;
+	border-top: 2px solid black;
+	padding: 5px;
+	right: 20px;
+	top: 16%;
+	-moz-transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	-o-transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+} */
+
+.gantt-dropdown-check-list .gantt-span:active:after {
+	right: 8px;
+	top: 21%;
+}
+
+.gantt-dropdown-check-list ul.gantt-items {
+	padding: 2px;
+	display: none;
+	margin: 0;
+	border: 1px solid #ffffff;
+	border-top: none;
+}
+
+.gantt-dropdown-check-list ul.gantt-items li {
+	list-style: none;
+	padding: 0;
+	border: none;
+	color: white;
+	cursor: default;
+}
+
+.gantt-dropdown-check-list.visible .gantt-items {
+	display: block;
+	position: absolute;
+	left: -1px;
+	height: auto;
+	background-color: rgb(0, 0, 0);
+    border-radius: 0 0 11px 11px;
+	z-index: 1;
+	width: 82px;
+	
+}
+
+.gantt-items li input{
+	margin: 0px 5px;
+	accent-color: #000000;
+}
+.gantt-item {
+	padding-left: 4px;
+	font-size: 12px;
+	
+}
+
+/* 업무상태 색깔 */
+.gantt-color {
+	border-radius: 50%;
+	width: 9px;
+	height: 9px;
+	display: inline-block;
+}
+.gantt-status1 {
+	background-color: #B1B1B1;
+}
+.gantt-status2 {
+	background-color: #04A5FF;
+}
+.gantt-status3 {
+	background-color: #F34747;
+}
+.gantt-status4 {
+	background-color: #64C139;
+}
+.gantt-status-color {
+	/* padding: 0px 15px; */
+    border-radius: 15px;
+    height: 25px;
+	width: 68px;
+}
+
+.gantt-rank {
+	width: 15px;
+    margin: 0 9px 3px 5px;
+}
+
+.add-btn-section {
+	margin-left: auto;
+}
+
+.gantt-add-btn {
+	color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+	border: 1px solid white;
+}
+
+/* 간트차트 section 업무 영역 */
+.gantt-all-task {
+	display: flex;
+	height: 100%;
+}
+
+.gantt-task-wrap {
+	/* width: 45%; */
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	resize: horizontal;
+	min-width: 415px;
+}
+
+.gantt-task-header {
+	display: flex;
+	justify-content: flex-start;
+	text-align: center;
+	height: 44px;
+	background-color: rgba(255, 255, 255, 0.226);
+	/* border-right: 6px solid #161616d9; */
+	box-shadow: 2px -2px 3px 1px #000000;
+}
+
+.gantt-task-header .gantt-task-header-div {
+	width: 20%;
+	padding: 3px 0px;
+	height: 30px;
+}
+/* .gantt-order {
+
+} */
+.gantt-order-div {
+	display: none;
+    /* width: fit-content; */
+    position: absolute;
+    border: 1px solid #fff;
+    background-color: #000;
+    z-index: 1;
+    /* margin-left: 17px; */
+}
+.gantt-task-body {
+	overflow-y:auto;
+	height: 616px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+.gantt-task-body::-webkit-scrollbar-thumb {
+    background-color: transparent; /* 스크롤바 색상 */
+}
+.gantt-chart-body {
+    /* box-shadow: inset -8px -4px 12px 0px black; */
+	/* overflow-y: auto; */
+	overflow-x: hidden;
+}
+.gantt-task-body::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+}
+.gantt-chart-body::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+}
+
+/* .gantt-project {
+	height: 43.5px;
+} */
+
+.gantt-project-title {
+	height: 40.5px;
+	line-height: 40.5px;
+	/* border-right: 1px solid #fff; */
+	font-size: larger;
+    font-weight: 600;
+	border-top: 1px solid ;
+	border-bottom: 1px solid ;
+	width: 100%;
+}
+
+.gantt-task {
+	/* border-bottom: 1px solid #fff; */
+    /* padding: 3px; */
+	display: flex;
+	height: 40.5px;
+	position: relative;
+	margin-bottom: 3px;
+	flex-direction: row;
+	justify-content: space-between;
+	transition: display 0.5s ease;
+}
+
+.gantt-child-task {
+	background-color: #ffffff14;
+}
+
+.gantt-task input {
+	border: none;
+	width: 100%;
+	text-align: center;
+	background: none;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.respon-name-span {
+	height: 24px;
+    border-radius: 10px;
+}
+
+.gantt-task-detail-click, .taskKey, .taskName {
+	display: inline-block;
+}
+
+.gantt-task>div {
+	padding: 10px 5px;
+  	overflow: visible;
+  	white-space: nowrap;
+	/* margin-bottom: 3px; */
+	background-color: #ffffff0a;
+}
+
+/*  업무 부분 너비 조절 */
+.gantt-task .gantt-editable-div {
+	width: 22%;
+	text-align: left;
+	flex: 1;
+}
+.responName {
+	width: 14%;
+	overflow: visible;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	margin-right: 7px;
+	justify-content: center;
+}
+
+.responName:hover {
+	background-color: #000;
+	border-radius: 10px;
+}
+
+.task-flex {
+	display: flex;
+	justify-content: space-between;
+	width: 330px;
+	align-items: center;
+	position: relative;
+}
+.gantt-status-name {
+	width: 22%;
+	position: relative;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+}
+.gantt-task-4 {
+	width: 27%;
+}
+.gantt-task-5 {
+	width: 27%;
+}
+
+.gantt-more-btn {
+	position: relative;
+}
+
+/* 업무명 수정 가능 */
+.editable {
+	padding: 5px;
+}
+/*  */
+.gantt-editable-div {
+	display: flex;
+	align-items: center;
+}
+.gantt-task-detail-click {
+	flex: 0 0 10%;
+	position: relative;
+	width: fit-content;
+}
+.gantt-task-detail-click-span {
+	display: block;
+	white-space: nowrap;
+	transform-origin: 50% 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(90deg);
+	font-size: large;
+	color: transparent;
+	padding-right: 5px;
+	font-weight: bold;
+}
+.taskKey {
+	display: flex;
+	width: 20px;
+	height: 20px;
+	font-size: 12px;
+	background: #e52465;
+	border-radius: 5px;
+	justify-content: center;
+	align-items: center;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.taskKeyright {
+	display: flex;
+	width: 20px;
+	height: 20px;
+	font-size: 12px;
+	background: #ed5789;
+	border-radius: 5px;
+	justify-content: center;
+	align-items: center;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.taskand {
+	font-size: 8px;
+}
+
+.task-top-icon {
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+}
+.task-top-icon-img {
+	width: 15px;
+	height: 15px;
+}
+.task-bottom-icon-img {
+	width: 10px;
+	height: auto;
+	
+}
+
+.taskChildPosition {
+	width: 23px;
+}
+
+.taskName {
+	flex: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-left: 10px;
+	max-width: 345px;
+}
+
+#taskNameright {
+	flex: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-left: 10px;
+	/* min-width: 20px; */
+	width: 40px;
+}
+
+.gantt-task:hover .gantt-task-detail-click-span {
+	color: white;
+}
+
+/* 업무명 자세히 보기 */
+.gantt-detail {
+	display: none;
+	position: absolute;
+    background-color: rgba(0 0 0 /90%);
+	top: 20px;
+	right: 0px;
+    width: auto;
+    padding: 5px;
+    z-index: 1;
+	border: 1px solid var(--inactive-color);
+	margin-left: 20px;
+	margin-top: 5px;
+	border-radius: 10px;
+}
+.gantt-detail-btn {
+	border: none;
+	padding: 3px;
+	width: 100%;
+}
+
+.gantt-detail-btn:hover {
+	background-color: #ffffff2f;
+    border-radius: 4px;
+}
+
+/* 드롭박스 선택 수정 */
+
+
+
+
+/* 간트차트 section 차트 영역 */
+.gantt-chart-wrap {
+	flex: 1;
+	width: 55%;
+    height: 100%;
+	display: flex;
+	overflow-x: auto;
+	overflow-y: hidden;
+	position: relative;
+	min-width: 300px;
+}
+
+.gantt-chart-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.gantt-chart-header {
+	box-sizing: border-box;
+	text-align: center;
+	height: 44px;
+	background-color: rgba(255, 255, 255, 0.226);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-left: 3px;
+	align-items: center;
+}
+
+.gantt-header-month {
+	display: flex;
+	position: relative;
+}
+
+.gantt-header-scroll {
+	white-space: nowrap;
+	display: flex;
+	flex-direction: row;
+	gap: 13px;
+	height: 44px;
+	align-items: center;
+}
+
+.bar {
+	color: #cacaca;
+}
+
+.gantt-chart {
+	display: flex;
+    flex-direction: row;
+	height: 40.5px;
+	align-items: center;
+	margin-bottom: 3px;
+	/* background-color: #ffffff0a; */
+	gap: 13px;
+	padding-left: 3px;
+}
+
+/* .gantt-chart:last-child {
+	margin-bottom: 60px;
+}
+.gantt-task:last-child {
+	margin-bottom: 60px;
+} */
+
+.gantt-project-chart {
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	display: flex;
+    flex-direction: row;
+	height: 40.5px;
+	align-items: center;
+	gap: 13px;
+	padding-left: 3px;
+}
+
+.gantt-child-chart {
+	background-color: #ffffff14;
+}
+
+.gantt-chart > div,
+.gantt-project-chart > div
+{
+	flex-basis: 60px;
+	width: 60px;
+}
+.bk-row {
+	width: 77px;
+	height: 20px;
+	border-radius: 3px;
+	background-color: #21D9AD;
+	display: flex;
+}
+
+.dates {
+	font-size: 11px;
+	background-color: #0000004a;
+	width: 94%;
+    text-align: center;
+	border-radius: 4px;
+    margin-left: 1px;
+    margin-top: 2px;
+	height: 15px;
+	display: none;
+}
+
+.gantt-chart:hover .dates{
+	display: block;
+}
+
+.date-container {
+	display: flex;
+	flex-direction: column;
+    justify-content: flex-end;
+}
+
+.gantt-header-scroll .date {
+	padding: 4px 15px;
+	width: 60px;
+	color: #fff;
+	height: 30px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 60px;
+	font-size: 12px;
+	text-align: center;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	
+}
+
+.gantt-chart-header .month {
+	padding: 4px 15px;
+	width: 60px;
+	color: #fff;
+	height: 30px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 6px;
+	position: relative;
+}
+
+/* .task {
+	background-color: #2196F3;
+	color: #fff;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 3px;
+	display: inline-block;
+} */
+
+.scroll-style-parent {
+	position:relative;
+}
+
+.scroll-style::-webkit-scrollbar-thumb {
+	/* position: fixed; */
+	background-color: white;
+}
+
+.scroll-style::-webkit-scrollbar-horizontal {
+	height: 3px;
+}
+
+/* 업무명 div에 placeholder */
+/* [contenteditable="true"]:empty:before {
+	content: attr(placeholder);
+} */
+
+.show {
+    display: block;
+}
+
+/* 시작일 마감일 달력 없애기 */
+.start-date::-webkit-calendar-picker-indicator {
+    display: none;
+}
+.end-date::-webkit-calendar-picker-indicator {
+    display: none;
+}

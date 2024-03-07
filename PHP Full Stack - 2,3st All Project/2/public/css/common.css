@@ -1,0 +1,190 @@
+/* @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+* {
+    font-family: 'NanumSquare', sans-serif;
+} */
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 해시태그용 */
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+h2 {
+    font-size: 1.7rem;
+}
+* {
+    font-family: 'NanumSquareRound';
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+}
+.header-mobile {
+    background-color: #F9F9F9;
+    height: 40px;
+    position: relative;
+    display: none;
+}
+.header-mobile-backBtn {
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #6d6d6d;
+}
+.header-mobile-backBtn:hover {
+    border-radius: 50%;
+    background-color: rgb(216, 218, 221);
+}
+.header-pageName {
+    line-height: 40px;
+    text-align: center;
+}
+
+
+/* footer */
+
+.developer-info {
+	background-color: #2f2f2f;
+	height: 155px;
+	width: 100vw;
+	text-align: center;
+	line-height: 50px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    font-size: 0.8rem;
+    justify-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.developer1, .developer2, .developer3 {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.developer-info div div {
+    color: #c1c1c1;
+    font-weight: 100;
+    height: 20px;
+}
+.developer-info div div:first-child {
+    color: #dedede;
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.footer-gap {
+    border-bottom: 1px solid rgb(103, 103, 103);
+    margin: 35px 0;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+}
+.copyright-info {
+    margin-top: 10px;
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.copyright-info div:first-child {
+    margin-right: 13px;
+}
+
+@media screen and (max-width: 800px) {
+    .header-mobile {
+        display: block;
+    }
+    .developer-info {
+        grid-template-columns: 32% 32% 32%;
+        width: 100%;
+        grid-template-rows: 56px 1fr;
+        height: 110px;
+    }
+    .developer-info div div:first-child {
+        font-size: 0.6rem;
+    }
+    .developer-info div div {
+        font-size: 0.5rem;
+    }
+    .developer1, .developer2, .developer3 {
+        line-height: 12px;
+        margin-top: 15px;
+    }
+    .footer-gap {
+        margin: 5px 0;
+    }
+    
+    .footer-section {
+        margin-bottom: 70.8px;
+    }
+    /* .developer1, .developer2, .developer3 {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .developer-info {
+        max-width: 100%;
+        display: grid;
+        grid-template-rows: repeat(5,1fr);
+        font-size: 0.7rem;
+        align-content: center;
+        justify-content: start;
+        grid-template-columns: 1fr;
+        justify-items: start;
+        line-height: 35px;
+    }
+    .developer1 {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        padding-left: 20%;
+    }
+    .developer2 {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        padding-left: 20%;
+    }
+    .developer3 {
+        grid-row-start: 3;
+        grid-row-end: 4;
+        padding-left: 20%;
+    }
+    .footer-gap {
+        grid-row-start: 4;
+        grid-row-end: 5;
+        margin: 0;
+        padding: 0;
+        position: static;
+    }
+    .copyright-info {
+        margin: 0;
+        grid-row-start: 5;
+        grid-row-end: 6;
+        margin-bottom: 15px;
+        padding-left: 20%;
+    }
+    .developer1 div, .developer2 div, .developer2 div {
+        margin-right: 10px;
+    } */
+}
